@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture for startups</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        //To generate Number of Founders TEXT BOXes
+        function generate() {
+
+            var a = parseInt(document.getElementById("numberfounder").value);
+            var ch = document.getElementById("ch");
+
+            for (i = 0; i < a; i++) {
+                var p = document.createElement("p");
+                var input = document.createElement("input");
+                
+                ch.appendChild(input);
+                ch.appendChild(p);
+                
+            }
+        }
+
+     
+
+      function togglefunc() {
+      var x = document.getElementById("formdisplaytoggle");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+      }
+        
+      
+    </script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed top" style="background-color: maroon;">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+        <a class="navbar-brand mr-auto">VENTURE FOR STARTUPS</a>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="home.html" id="home"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="startuphome.php" id="Startup"><span class="fa fa-id-badge fa-lg"></span> Startup</a></li>
+                
+            </ul>
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item " style="float:left;"><a class="nav-link" href="logout.php" id="home"><span class="fa fa-sign-out fa-lg"></span>Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div  class="container" style="z-index:1000;">
+        <div class="row">
+            <h2></h2>
+            
+        </div>
+        <div class="row" id="signupdiv">
+            <div class="col-12 ">
+                <form id="mysform" method="POST" style="margin-top: 1em;">
+                    
+                    <h3 style="text-align: center;">Startup Registration</h3>
+                    <hr style="border-top: 1px solid #9900cc;">
+                    
+                    <br>
+                    <h5>Basic Details</h5>
+                    <hr style="border-top: 1px solid #9900cc;">
+                    <div class="form-group row ">
+<!-- NAME -->                       
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Name</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                <span id="nameresult"></span>
+                            </div>
+<!-- EMAIL -->                      
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Email</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+                                <span id="emailresult"></span>
+                            </div>
+                        
+                    </div>
+                    
+                    <div class="form-group row ">
+<!-- PHONE -->
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Phone</label>
+                            
+                            <div class="col-8 col-md-3 ">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Contact number">
+                                <span id="phoneresult"></span>
+                                
+                            </div>
+                        
+                           
+                    </div>
+                    <br>
+                    <h5>StartUp Details</h5>
+                    <hr style="border-top: 1px solid #9900cc;">
+                    <div class="form-group row ">
+                        
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Startup Name</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="startupname" name="startupname" placeholder="Enter your Startup name">
+                                <span id="startupnameresult"></span>
+                            </div>
+                            
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Type of Startup</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="startuptype" name="startuptype" placeholder="Startup type">
+                                <span id="startuptyperesult"></span>
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="form-group row ">
+                        
+                            <label for="firstname" class="col-form-label col-12 col-md-1 ">Location</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="location" name="location" placeholder="Location">
+                                <span id="locationresult"></span>
+                            </div>
+                        
+                            <label for="sdescription" class="col-12 col-md-1">Description</label>
+                            <div class="form-group purple-border  col-12 col-md-5">
+                                <textarea class="form-control" id="sdescription" name="sdescription" rows="3"></textarea>
+                                <span id="sdescriptionresult"></span>
+                            </div>                        
+
+                    </div>
+                    <br>
+                    <h5>Create Password</h5>
+                    <hr style="border-top: 1px solid #9900cc;">
+                    <div class="form-group row ">
+                        
+                            <label for="password" class="col-form-label col-12 col-md-1 ">Enter Password</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" minlength = "8" maxlength = "16">
+                                <span id="result"></span>
+                            </div>
+                        
+                            <label for="confirmpassword" class="col-form-label col-12 col-md-1 ">Confirm Password</label>
+                            <div class="col-12 col-md-5 ">
+                                <input type="text" class="form-control" id="confirmpassword" minlength = "8" maxlength = "16"
+                                name="confirmpassword" placeholder="Confirm Password">
+                                <span id="confirmpasswordresult"></span>
+                            </div>
+                        
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="offset-1 offset-md-2">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Sign Up">
+                        </div>
+
+                        <div class="offset-1 offset-md-2">
+                        <input type='button' class="btn btn-warning" name="submit" id='validate' onclick="validateform()" value="Validate FORM" />
+                    </div>
+                        <div class="offset-1 offset-md-2">
+                            <button class="btn btn-danger" name="reset" onclick="reset()" value="Clear" >Clear</button>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+                
+            </div>
+            
+        </div>
+        <div class="row">
+        <div class="offset-md-4">
+            <h4><a href="startup.html">Already have an account? Login Here</a></h4>
+        </div>
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+        
+
+
+    $(document).ready(function() {
+            $('#password').keyup(function() {
+                $('#result').html(checkStrength($('#password').val()))
+                })
+                var regexpwtooweak = /^(((?=.*[a-z])|(?=.*[0-9])|(?=.*[A-Z]))([a-z0-9A-Z]{8,16}))$/;
+                var regexpweak = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,16}$/; 
+                var regexpwmod = /^((?=.*[a-z])|(?=.*[A-Z])|(?=.*[0-9]))(?=.*[-@.+_!#$%&'\/=?^`{|])([a-zA-Z0-9-.+_!#$%&'@*\/=?^`{|]{8,16})$/;
+                var regexpwstrong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-@.+_!#$%&'\/=?^`{|])([a-zA-Z0-9-.+_!#$%&'@*\/=?^`{|]{8,16})$/;
+                var regexpwtoostrong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-@.+_!#$%&'\/=?^`{|].*[-@.+_!#$%&'\/=?^`{|].*[-@.+_!#$%&'\/=?^`{|].*[-@.+_!#$%&'\/=?^`{|].*)([a-zA-Z0-9-.+_!#$%&'@*\/=?^`{|]{8,16})$/;
+                function checkStrength(password) {
+                    
+    
+                if(regexpwtoostrong.test(password)) {
+                    $('#result').removeClass()
+                    $('#result').css("color","#003300");
+                    return 'Your password is Too Strong'
+                }
+                else if (regexpwstrong.test(password)) {
+                    $('#result').removeClass()
+                    $('#result').css("color","green");
+                    return 'Your password is Strong'
+                }
+                else if (regexpwmod.test(password)) {
+                    $('#result').removeClass()
+                    $('#result').css("color","orange");
+                    return 'Your password is Moderate'
+                }
+                else if (regexpweak.test(password)) {
+                    $('#result').removeClass()
+                    $('#result').css("color","red");
+                    return 'Your password is Weak'
+                }
+                else{
+                    $('#result').removeClass()
+                    $('#result').css('color','maroon');
+                    return 'Your password is Too weak'
+                }
+            }
+        });
+    
+    function reset()
+    {
+        nameresult.innerHTML="";
+        startupnameresult.innerHTML ="";
+        startuptyperesult.innerHTML ="";
+        locationresult.innerHTML="";
+        sdescriptionresult.innerHTML ="";
+        phoneresult.innerHTML ="";
+        emailresult.innerHTML ="";
+        result.innerHTML ="Your Password is Too weak";
+        confirmpasswordresult.innerHTML ="";
+    
+    }
+    
+    function validateform() {
+     reset();
+      var regexphone = /^(\+91)?[6|7|8|9]{1}[0-9]{9}$/;
+      var regexemail = /^[a-zA-Z0-9]([a-zA-Z0-9][\.\+\-\_\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|]{0,1}){0,62}([a-zA-Z0-9][\@])([\a-zA-Z0-9\-]{1,6}[\.]){1,3}([a-zA-Z]){2,4}$/;
+    
+      
+    
+      var regname = /^[a-zA-Z\s]{2,40}$/;
+    
+      //const phone = $("#phone").val();
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    
+    var confirmpassword = document.getElementById("confirmpassword").value; 
+    var name = document.getElementById("name").value;
+    var startupname = document.getElementById("startupname").value;
+    var startuptype = document.getElementById("startuptype").value;
+    var location = document.getElementById("location").value;
+    var sdescription = document.getElementById("sdescription").value;
+    
+    var emailresult = document.getElementById("emailresult");
+    var phoneresult = document.getElementById("phoneresult");
+    var nameresult = document.getElementById("nameresult");
+    var passwordresult = document.getElementById("result");
+    var startupnameresult = document.getElementById("startupnameresult");
+    var startuptyperesult = document.getElementById("startuptyperesult");
+    var locationresult = document.getElementById("locationresult");
+    var sdescriptionresult = document.getElementById("sdescriptionresult");
+    
+    var flag=true;
+    
+    /* EMPTY FIELD Validation  */
+    /*NAME Validation*/
+    
+        if(name.length == 0){
+            nameresult.innerHTML = "NAME is Required";
+            nameresult.style.color = "red";
+            flag=false;
+        }
+    
+        if(!regname.test(name)) {
+            nameresult.innerHTML = "Please enter proper NAME format";
+            nameresult.style.color = "red";
+            flag=false;
+        }
+    /*STARTUP NAME Validation*/
+        if(startupname.length == 0){
+            startupnameresult.innerHTML = "STARTUP NAME is Required";
+            startupnameresult.style.color = "red";
+            flag=false;
+        }
+    
+    /*STARTUP TYPE Validation*/
+        if(startuptype.length == 0){
+            startuptyperesult.innerHTML = "STARTUP TYPE is Required";
+            startuptyperesult.style.color = "red";
+            flag=false;
+        }
+    
+    /*LOCATION Validation*/
+        if(location.length == 0){
+            locationresult.innerHTML = "LOCATION is Required";
+            locationresult.style.color = "red";
+            flag=false;
+        }
+    
+    /*SDESCRIPTION Validation*/
+    
+        if(sdescription.length == 0){
+            sdescriptionresult.innerHTML = "Startup Description is Required";
+            sdescriptionresult.style.color = "red";
+            flag=false;
+        }
+    
+      
+    
+    
+    
+    /*PHONE Validation*/
+        if(phone.length == 0){
+            phoneresult.innerHTML = "PHONE NUMBER is Required";
+            phoneresult.style.color = "red";
+            flag=false;
+        }
+        else if(regexphone.test(phone)){
+            console.log("This is a VALID Phone Number");
+            phoneresult.innerHTML = "Your Phone Number is Valid";
+            phoneresult.style.color = "green";
+           
+        }
+        else{
+            console.log("This is NOT a VALID Phone Number");
+            phoneresult.innerHTML = "This is NOT a VALID Phone Number";
+            phoneresult.style.color = "red";
+            flag=false;
+        }
+    
+    /*EMAIL Validation*/
+        if(email.length == 0){
+            emailresult.innerHTML = "EMAIL is Required";
+            emailresult.style.color = "red";
+            flag=false;
+        }
+        else if(regexemail.test(email)){
+            console.log("This is a VALID EMAIL Address");
+            emailresult.innerHTML = "Your Email Address is Valid";
+            emailresult.style.color = "green"; 
+        }
+        else{
+            console.log("This is NOT a VALID EMAIL Address");
+            emailresult.innerHTML = "This is NOT a VALID EMAIL Address";
+            emailresult.style.color = "red";
+            flag=false;
+        }
+    
+    /*PASSWORD Validation*/
+        if(password.length == 0){
+            passwordresult.innerHTML = "PASSWORD is Required";
+            passwordresult.style.color = "red";
+            flag=false;
+        }
+        else if(password.length < 8){
+            passwordresult.innerHTML = "PASSWORD should be of min. 8 characters";
+            result.style.color = "red";
+            flag=false;
+        }
+        else if(password != confirmpassword)
+        {
+            confirmpasswordresult.innerHTML = "PASSWORDs do not match";
+            confirmpasswordresult.style.color = "red";
+            flag=false;
+        }
+        else
+        {
+            passwordresult.innerHTML = "PASSWORD validation done";
+            passwordresult.style.color = "green";
+    
+        }
+    
+        if(flag==true)
+        {
+            alert("Validation successfull!");
+            
+            return true;
+            
+        }
+        else{
+            alert("Validation failed!");
+            return false;
+        }
+      
+    
+      
+    }
+    
+    
+     //validate('+918989898989');
+    
+    
+    
+        </script>
+<footer class="footer" style="background-color: #ffb3b3;">
+    <div class="container">
+        <div class="row">             
+            <div class="col-4 offset-1 col-sm-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="home.html" id="home1">Home</a></li>
+                    <li><a href="startup.html" id="register1">StartUp</a></li>
+                    <li><a href="investor.html" id="show1">Investor</a></li>
+                    <li><a href="customer.html" id="show1">Customer</a></li>
+                </ul>
+            </div>
+            <div class="col-7 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                  MIT Academy Of Engineering<br>
+                  Alandi, Pune <br>
+                  Pin code:412105<br>
+                  <i class="fa fa-phone"></i>: +857 234 5678<br>
+                  <i class="fa fa-envelope"></i>: <a href="mailto:kkpatil@mitaoe.ac.in">startups@gmail.com</a>
+               </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/+"><span class="fa fa-google-plus"></span></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><span class="fa fa-facebook"></span></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><span class="fa fa-linkedin"></span></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><span class="fa fa-twitter"></span></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><span class="fa fa-youtube"></span></a>
+                    <a class="btn btn-social-icon btn-google" href="mailto:"><span class="fa fa-envelope"></span></a>
+                </div>
+            </div>
+       </div>
+       <div class="row justify-content-center">             
+            <div class="col-auto">
+                <p>© Copyright 2020 </p>
+            </div>
+       </div>
+    </div>
+</footer>
+<script type="text/javascript" src="register.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
